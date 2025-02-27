@@ -1,0 +1,50 @@
+<!-- Code taken from class 9 lecture -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+
+</head>
+<body class="container">
+
+    <header>
+        <%- include('../partials/header'); %>
+    </header>
+
+    <main>
+        <div>
+            <a href="http://127.0.0.1:8080/addfacility">Add Facility</a>
+            <a href="http://127.0.0.1:8080/viewfacility">View Facilities</a>
+            <a href="http://127.0.0.1:8080/updatefacility">Update Facility</a>
+            <a href="http://127.0.0.1:8080/deletefacility">Delete Facility</a>
+            <a href="http://127.0.0.1:8080/addclassroom">Add Classroom</a>
+            <a href="http://127.0.0.1:8080/viewclassroom">View Classrooms</a>
+            <a href="http://127.0.0.1:8080/updateclassroom">Update Classroom</a> 
+            <a href="http://127.0.0.1:8080/deleteclassroom">Delete Classroom</a>
+            <a href="http://127.0.0.1:8080/addteacher">Add Teacher</a> 
+            <a href="http://127.0.0.1:8080/viewteacher">View Teachers</a>
+            <a href="http://127.0.0.1:8080/updateteacher">Update Teacher</a>
+            <a href="http://127.0.0.1:8080/deleteteacher">Delete Teacher</a>
+            <a href="http://127.0.0.1:8080/addchild">Add Child</a>
+            <a href="http://127.0.0.1:8080/viewchild">View Children</a>
+            <a href="http://127.0.0.1:8080/updatechild">Update Child</a>
+            <a href="http://127.0.0.1:8080/deletechild">Delete Child</a>
+          </div>
+        <br>
+        <% if (locals.auth) { %>
+           WELCOME <%= user %>
+        <% } %>
+        <% if (!locals.auth) { %>
+            <%= user %>
+            <br>
+            YOU ARE NOT AUTHORIZED
+         <% } %>
+
+    </main>
+
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+
+</body>
+</html>

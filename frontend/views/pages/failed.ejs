@@ -1,0 +1,29 @@
+<!-- Code taken from class 9 lecture -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+
+</head>
+<body class="container">
+
+    <header>
+        <%- include('../partials/header'); %>
+    </header>
+
+    <main>
+        
+        <% if (!locals.auth) { %>
+            <%= user %>
+            <br>
+            YOU ARE NOT AUTHORIZED
+         <% } %>
+
+    </main>
+
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+
+</body>
+</html>

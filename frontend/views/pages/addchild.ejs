@@ -1,0 +1,50 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <div>
+            <a href="http://127.0.0.1:8080/addfacility">Add Facility</a>
+            <a href="http://127.0.0.1:8080/viewfacility">View Facilities</a>
+            <a href="http://127.0.0.1:8080/updatefacility">Update Facility</a>
+            <a href="http://127.0.0.1:8080/deletefacility">Delete Facility</a>
+            <a href="http://127.0.0.1:8080/addclassroom">Add Classroom</a>
+            <a href="http://127.0.0.1:8080/viewclassroom">View Classrooms</a>
+            <a href="http://127.0.0.1:8080/updateclassroom">Update Classroom</a>  
+            <a href="http://127.0.0.1:8080/deleteclassroom">Delete Classroom</a>
+            <a href="http://127.0.0.1:8080/addteacher">Add Teacher</a>
+            <a href="http://127.0.0.1:8080/viewteacher">View Teachers</a>
+            <a href="http://127.0.0.1:8080/updateteacher">Update Teacher</a>
+            <a href="http://127.0.0.1:8080/deleteteacher">Delete Teacher</a>
+            <a href="http://127.0.0.1:8080/addchild">Add Child</a>
+            <a href="http://127.0.0.1:8080/viewchild">View Children</a>
+            <a href="http://127.0.0.1:8080/updatechild">Update Child</a>
+            <a href="http://127.0.0.1:8080/deletechild">Delete Child</a>
+        </div>
+        <br>
+        <form action="/formaddchild" method="post">
+            <label for="childfname">Enter Child's First Name:</label><br>
+            <input type="text" id="childfname" name="childfname"><br><br>
+            <label for="childlname">Enter Child's Last Name:</label><br>
+            <input type="text" id="childlname" name="childlname"><br><br>
+            <label for="childage">Enter Child's Age:</label><br>
+            <input type="number" id="childage" name="childage"><br><br>
+            <label for="childclass">Select Classroom for Child:</label><br>
+            <select name="childclass" id="childclass"> 
+            <% classrooms.forEach(function(classroom) { %>
+                <option value="<%= JSON.stringify(classroom) %>"> Name: <%= classroom.classroom_name %>, Capacity: <%= classroom.capacity %>, Facility: <%= classroom.facility_name %> </option>
+            <% }); %>
+            </select>
+            <br>
+            <br>
+            <label for="childfac">Select Facility for Child:</label><br>
+            <select name="childfac" id="childfac"> 
+            <% facilities.forEach(function(facility) { %>
+                <option value="<%= JSON.stringify(facility) %>"> <%= facility.name %> </option>
+            <% }); %>
+            </select>
+            <br>
+            <br>
+            <input type="submit">
+        </form>
+    </body>
+</html>

@@ -1,0 +1,48 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <div>
+            <a href="http://127.0.0.1:8080/addfacility">Add Facility</a>
+            <a href="http://127.0.0.1:8080/viewfacility">View Facilities</a>
+            <a href="http://127.0.0.1:8080/updatefacility">Update Facility</a>
+            <a href="http://127.0.0.1:8080/deletefacility">Delete Facility</a>
+            <a href="http://127.0.0.1:8080/addclassroom">Add Classroom</a>
+            <a href="http://127.0.0.1:8080/viewclassroom">View Classrooms</a>
+            <a href="http://127.0.0.1:8080/updateclassroom">Update Classroom</a> 
+            <a href="http://127.0.0.1:8080/deleteclassroom">Delete Classroom</a>
+            <a href="http://127.0.0.1:8080/addteacher">Add Teacher</a> 
+            <a href="http://127.0.0.1:8080/viewteacher">View Teachers</a>
+            <a href="http://127.0.0.1:8080/updateteacher">Update Teacher</a>
+            <a href="http://127.0.0.1:8080/deleteteacher">Delete Teacher</a>
+            <a href="http://127.0.0.1:8080/addchild">Add Child</a>
+            <a href="http://127.0.0.1:8080/viewchild">View Children</a>
+            <a href="http://127.0.0.1:8080/updatechild">Update Child</a>
+            <a href="http://127.0.0.1:8080/deletechild">Delete Child</a>
+        </div>
+        <br>
+        <form action="/formupdateclassroom" method="post">
+            <label for="classtoupdate">Select Classroom to Update:</label><br>
+            <select name="classtoupdate" id="classtoupdate"> 
+            <% classrooms.forEach(function(classroom) { %>
+                <option value="<%= JSON.stringify(classroom) %>"> Name: <%= classroom.classroom_name %>, Capacity: <%= classroom.capacity %>, Facility: <%= classroom.facility_name %> </option>
+            <% }); %>
+            </select>
+            <br>
+            <br>
+            <label for="newclassname">Enter New Classroom Name:</label><br>
+            <input type="text" id="newclassname" name="newclassname"><br><br>
+            <label for="newclasscap">Enter New Classroom Capacity:</label><br>
+            <input type="number" id="newclasscap" name="newclasscap"><br><br>
+            <label for="newclassfac">Select New Facility:</label><br>
+            <select name="newclassfac" id="newclassfac"> 
+            <% facilities.forEach(function(facility) { %>
+                <option> <%= facility.name %> </option>
+            <% }); %>
+            </select>
+            <br>
+            <br>
+            <input type="submit">
+        </form>
+    </body>
+</html>
